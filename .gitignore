@@ -1,1 +1,4 @@
 .sass-cache/
+scss/vendor/
+scss/nucleus/
+css-compiled/
