@@ -1,0 +1,11 @@
+name: Creature
+version: 0.1.0
+description: "Theme for the *Creature* plateform for the **Grav** cms"
+icon: flask
+author:
+  name: luca wyss
+  email: info@lucawyss.com
+  url: http://web.lucawyss.com
+homepage: http://web.lucawyss.com/web/creature
+keywords: theme, core, modern, fast, responsive, html5, css3
+license: MIT
