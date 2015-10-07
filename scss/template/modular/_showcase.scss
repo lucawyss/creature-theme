@@ -18,7 +18,8 @@
     }
 
     .showcase {
-
+		height: 100vh;
+		min-height: 460px;
         padding-top: 4rem;
         padding-bottom: 4rem;
         background-color: #666;
@@ -27,19 +28,7 @@
 
         text-align: center;
         color: $header-text;
-        h1 {
-            font-size: 4rem;
-            margin-top: 0;
-            @include breakpoint(tablet-range) {
-                font-size: 3rem;
-            }
-            @include breakpoint(mobile-only) {
-                font-size: 2.5rem;
-                line-height: 1.2;
-                margin-bottom: 2.5rem;
-            }
-        }
-
+		
         .button {
             @extend .default-animation;
             color: $header-text;
@@ -55,6 +44,69 @@
                 background: rgba(255,255,255,0.2);
             }
         }
+        
+        h1 {
+            font-size: 3rem;
+            margin-top: 0;
+            @include breakpoint(tablet-range) {
+                font-size: 3rem;
+            }
+            @include breakpoint(mobile-only) {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 2.5rem;
+            }
+        }
+		
+		.quotes-wrapper {
+			display: inline;
+			position: relative;
+			text-align: left;
+		
+			.no-js & strong {
+				opacity: 0;
+				
+				&.is-visible {
+					opacity: 1;
+				}
+		
+			}
+		}
+		
+		.quotesAnimation.type {
+			
+			.quotes-wrapper {
+				vertical-align: top;
+				overflow: hidden;
+		
+				&.selected {
+					background-color: $light-gray;
+		
+					&::after {
+						visibility: hidden;
+					}
+				}
+				i {font-style: normal;}
+			}
+		
+			strong {
+				visibility: hidden;
+		
+				&.is-visible {
+					visibility: visible;
+				}
+			}
+		
+			i {
+				position: absolute;
+				visibility: hidden;
+		
+				&.in {
+					position: relative;
+					visibility: visible;
+				}
+			}
+		}
     }
 
 }

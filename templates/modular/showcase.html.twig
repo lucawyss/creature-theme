@@ -4,7 +4,13 @@
 {% else %}
 <div class="modular-row showcase">
 {% endif %}
-    {{ content }}
+    <section class="quotes">
+		<h1 class="quotesAnimation letters type">
+			<span class="quotes-wrapper waiting">
+				{{ content }}
+			</span>
+		</h1>
+	</section>
 
     {% for button in page.header.buttons %}
         <a class="button{% if button.primary %} primary{% endif %}" href="{{ button.url }}">{{ button.text }}</a>

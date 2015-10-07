@@ -29,14 +29,6 @@
     {% endblock %}
     {{ assets.css() }}
 
-    {% block javascripts %}
-        {% do assets.addJs('jquery',101) %}
-        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
-        {% do assets.addJs('theme://js/antimatter.js') %}
-        {% do assets.addJs('theme://js/slidebars.min.js') %}
-    {% endblock %}
-    {{ assets.js() }}
-
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
@@ -81,7 +73,16 @@
         {% include 'partials/navigation.html.twig' %}
         </div>
     </div>
-    {% block bottom %}
+{% block bottom %}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+        {% do assets.addJs('theme://js/antimatter.js') %}
+        {% do assets.addJs('theme://js/slidebars.min.js') %}
+        {% do assets.addJs('theme://js/typing.js') %}
+    {% endblock %}
+    {{ assets.js() }}
 
     <script>
     $(function () {
@@ -93,6 +94,6 @@
         });
     });
     </script>
-    {% endblock %}
+{% endblock %}
 </body>
 </html>

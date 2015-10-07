@@ -3,17 +3,16 @@
     <div class="feature-items">
     {% for feature in page.header.features %}
            <div class="feature">
-            {% if feature.icon %}
-            <i class="fa fa-fw fa-{{ feature.icon }}"></i>
-            <div class="feature-content icon-offset">
-            {% else %}
-            <div class="feature-content">
+            {% if feature.image %}
+                {% set logo = page.media[feature.image].grayscale() %}
+                <img src="{{ logo.url }}"> 
             {% endif %}
+            <div class="feature-content">
             {% if feature.header %}
             <h4>{{ feature.header }}</h4>
             {% endif %}
-            {% if feature.text %}
-            <p>{{ feature.text }}</p>
+            {% if feature.url %}
+            <p>{{ feature.url }}</p>
             {% endif %}
             </div>
         </div>
