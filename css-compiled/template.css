@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Montserrat:400|Raleway:300,400,600|Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round|Alegreya:400,400italic,700);
 #header #logo h3, #header #navbar ul.navigation, #header #navbar .panel-activation, #footer p {
   position: relative;
   top: 50%;
@@ -13,7 +13,7 @@
   padding: 7px 20px; }
   .button-small.button, .button-small.button-secondary {
     padding: 3px 10px;
-    font-size: 0.9rem; }
+    font-size: 1.1rem; }
 
 html, body {
   height: 100%; }
@@ -106,7 +106,7 @@ b, strong, label, th {
       #header #logo h3 a {
         color: #444; }
   #header #navbar {
-    font-size: 0.9rem; }
+    font-size: 1.1rem; }
     #header #navbar ul {
       margin: 0;
       padding: 0;
@@ -118,7 +118,7 @@ b, strong, label, th {
           float: left;
           position: relative; }
           #header #navbar ul.navigation li a {
-            font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+            font-family: "Varela Round", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
             display: inline-block;
             padding: 0.3rem 0.8rem; }
             #header #navbar ul.navigation li a:before, #header #navbar ul.navigation li a:after {
@@ -257,17 +257,17 @@ b, strong, label, th {
       color: #fff; }
 
 html, body, button, input, select, textarea, .pure-g, .pure-g [class*="pure-u"] {
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Alegreya", "Geneva", "Arial", serif;
   font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Varela Round", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   letter-spacing: -0px; }
 
 h1 {
-  font-size: 3.2rem; }
+  font-size: 3.4rem; }
   @media only all and (max-width: 47.938em) {
     h1 {
       font-size: 2.5rem;
@@ -276,24 +276,24 @@ h1 {
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h2 {
-    font-size: 2.1rem; } }
+    font-size: 2.3rem; } }
 @media only all and (max-width: 47.938em) {
   h2 {
-    font-size: 2rem; } }
+    font-size: 2.2rem; } }
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h3 {
-    font-size: 1.7rem; } }
+    font-size: 1.9rem; } }
 @media only all and (max-width: 47.938em) {
   h3 {
-    font-size: 1.6rem; } }
+    font-size: 1.8rem; } }
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h4 {
-    font-size: 1.35rem; } }
+    font-size: 1.55rem; } }
 @media only all and (max-width: 47.938em) {
   h4 {
-    font-size: 1.25rem; } }
+    font-size: 1.45rem; } }
 
 h1 {
   text-align: center;
@@ -310,7 +310,7 @@ h1 + h2 {
   font-size: 2rem;
   line-height: 1;
   text-align: center;
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Alegreya", "Geneva", "Arial", serif;
   font-weight: 300; }
   @media only all and (min-width: 48em) and (max-width: 59.938em) {
     h1 + h2 {
@@ -324,7 +324,7 @@ h2 + h3 {
   font-size: 2rem;
   line-height: 1;
   text-align: center;
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Alegreya", "Geneva", "Arial", serif;
   font-weight: 300; }
   @media only all and (min-width: 48em) and (max-width: 59.938em) {
     h2 + h3 {
@@ -393,7 +393,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "Inconsolata", monospace; }
+  font-family: "Courier New", monospace; }
 
 code {
   background: #f9f2f4;
@@ -429,8 +429,8 @@ hr {
   line-height: 1rem;
   display: inline-block;
   text-align: center;
-  font-size: 0.7rem;
-  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-family: "Varela Round", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   margin-right: 0.75rem; }
 
 fieldset {
@@ -448,8 +448,8 @@ textarea, input[type="email"], input[type="number"], input[type="password"], inp
 
 .form-field .required {
   color: #F3443F;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
   vertical-align: top;
   height: 1.5rem;
   display: inline-block; }
@@ -642,11 +642,11 @@ td {
       text-transform: uppercase; }
 
 .blog-content-item .list-blog-padding > p:nth-child(2) {
-  font-size: 1.2rem; }
+  font-size: 1.4rem; }
 
 .tags a {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: 1px solid #1BB3E9;
   border-radius: 3px;
   padding: 0.1rem 0.4rem;
@@ -658,7 +658,7 @@ td {
   list-style: none; }
   .archives li, .related-pages li {
     border-bottom: 1px solid #EEEEEE;
-    line-height: 2rem; }
+    line-height: 2.2rem; }
     .archives li:last-child, .related-pages li:last-child {
       border-bottom: 0; }
 
@@ -707,7 +707,7 @@ ul.pagination {
   height: 100%;
   padding-bottom: 6rem; }
   #error h1 {
-    font-size: 5rem; }
+    font-size: 5.2rem; }
   #error p {
     margin: 1rem 0; }
 
@@ -777,7 +777,7 @@ ul.pagination {
     border: 1px solid #FFFFFF;
     border-radius: 3px;
     box-shadow: none;
-    font-size: 1.3rem; }
+    font-size: 1.5rem; }
     .modular .showcase .button:hover {
       background: rgba(255, 255, 255, 0.2); }
   .modular .showcase .quotesAnimation {
@@ -832,10 +832,10 @@ ul.pagination {
     line-height: 100%; }
   .modular .features p {
     margin: 1rem 0;
-    font-size: 1.2rem; }
+    font-size: 1.4rem; }
     @media only all and (max-width: 47.938em) {
       .modular .features p {
-        font-size: 1rem; } }
+        font-size: 1.2rem; } }
   .modular .features .feature-items {
     margin-top: 2rem; }
     @supports not (flex-wrap: wrap) {
@@ -864,7 +864,7 @@ ul.pagination {
       font-size: 1.1rem; }
     .modular .features .feature p {
       display: inline-block;
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin: 0.2rem 0 1rem; }
     .modular .features .feature img {
       max-width: 50%; }

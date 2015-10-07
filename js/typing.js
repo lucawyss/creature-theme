@@ -68,12 +68,6 @@ jQuery(document).ready(function($){
 			hideLetter($word.find('i').eq(0), $word, bool, lettersDelay);
 			showLetter(nextWord.find('i').eq(0), nextWord, bool, lettersDelay);
 
-		}  else if($word.parents('.quotesAnimation').hasClass('clip')) {
-			$word.parents('.quotes-wrapper').animate({ width : '2px' }, revealDuration, function(){
-				switchWord($word, nextWord);
-				showWord(nextWord);
-			});
-
 		} else {
 			switchWord($word, nextWord);
 			setTimeout(function(){ hideWord(nextWord) }, animationDelay);

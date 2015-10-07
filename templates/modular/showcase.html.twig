@@ -1,15 +1,13 @@
-{% set showcase_image = page.media.images|first.grayscale().contrast(20).brightness(-125).colorize(-35,81,122) %}
+{% set showcase_image = page.media.images|first.grayscale().contrast(40).brightness(-110).colorize(-35,81,122) %}
 {% if showcase_image %}
 	<div class="modular-row showcase flush-top" style="background-image: url({{ showcase_image.url }});">
 {% else %}
 <div class="modular-row showcase">
 {% endif %}
-    <section class="quotes">
-		<h1 class="quotesAnimation letters type">
-			<span class="quotes-wrapper waiting">
-				{{ content }}
-			</span>
-		</h1>
+	<section class="quotesAnimation letters type">
+		<div class="quotes-wrapper waiting">
+			{{ content }}
+		</div>
 	</section>
 
     {% for button in page.header.buttons %}
