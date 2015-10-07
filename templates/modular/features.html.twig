@@ -4,7 +4,7 @@
     {% for feature in page.header.features %}
            <div class="feature">
             {% if feature.image %}
-                {% set logo = page.media[feature.image].grayscale() %}
+                {% set logo = page.media[feature.image].grayscale().contrast(20).brightness(-75).colorize(-35,81,122) %}
                 <img src="{{ logo.url }}"> 
             {% endif %}
             <div class="feature-content">

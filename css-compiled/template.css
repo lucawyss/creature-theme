@@ -764,6 +764,9 @@ ul.pagination {
   background-color: #666;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
   color: #FFFFFF; }
   .modular .showcase .button {
@@ -777,21 +780,22 @@ ul.pagination {
     font-size: 1.3rem; }
     .modular .showcase .button:hover {
       background: rgba(255, 255, 255, 0.2); }
-  .modular .showcase h1 {
+  .modular .showcase .quotesAnimation {
     font-size: 3rem;
     margin-top: 0; }
     @media only all and (min-width: 48em) and (max-width: 59.938em) {
-      .modular .showcase h1 {
-        font-size: 3rem; } }
+      .modular .showcase .quotesAnimation {
+        font-size: 2.5rem; } }
     @media only all and (max-width: 47.938em) {
-      .modular .showcase h1 {
-        font-size: 2.5rem;
+      .modular .showcase .quotesAnimation {
+        font-size: 2rem;
         line-height: 1.2;
         margin-bottom: 2.5rem; } }
   .modular .showcase .quotes-wrapper {
-    display: inline;
+    display: inline-block;
     position: relative;
-    text-align: left; }
+    text-align: left;
+    min-height: 8em; }
     .no-js .modular .showcase .quotes-wrapper strong, .no-js .modular .showcase .quotes-wrapper label, .no-js .modular .showcase .quotes-wrapper th {
       opacity: 0; }
       .no-js .modular .showcase .quotes-wrapper strong.is-visible, .no-js .modular .showcase .quotes-wrapper label.is-visible, .no-js .modular .showcase .quotes-wrapper th.is-visible {
@@ -800,7 +804,7 @@ ul.pagination {
     vertical-align: top;
     overflow: hidden; }
     .modular .showcase .quotesAnimation.type .quotes-wrapper.selected {
-      background-color: #ddd; }
+      background-color: black; }
       .modular .showcase .quotesAnimation.type .quotes-wrapper.selected::after {
         visibility: hidden; }
     .modular .showcase .quotesAnimation.type .quotes-wrapper i {
