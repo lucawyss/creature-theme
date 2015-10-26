@@ -1,0 +1,36 @@
+{% macro teamID(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="team" class="team section">
+	<div class="row container">
+	    <h2 class="header">{{ page.title }}</h2>
+	</div>
+	<div class="row container">
+		{% for feature in page.header.features %}
+	       <article class="col s12 m4 center portrait" data-target="{{ _self.teamID(feature.header) }}">
+		       <div class="card-panel z-depth-1">
+	              <img src="{{ feature.image }}" alt="" class="circle responsive-img">
+	              <span class="white-text card-title">{{ feature.header }}</span>
+		       </div>
+	      </article>
+	    {% endfor %}
+	      
+		  <element id="teamContent" class="col s12 hide-on-small-only">
+		  	{% for feature in page.header.features %}
+		        <div id="{{ _self.teamID(feature.header) }}" class="card-panel z-depth-2 hidden">
+		            <div class="card-content white-text">
+			            <span class="card-title">{{ feature.header }}</span>
+			            {{ feature.text }}
+			        </div>
+			        <div class="card-action">
+			            <ul class="social">
+			              <li class="chip"><i class="material-icons">face</i>twitter</li>
+			              <li class="chip"><i class="material-icons">face</i>facebook</li>
+			              <li class="chip"><i class="material-icons">face</i>google+</li>
+		              </ul>
+			        </div>
+		        </div>
+			{% endfor %}
+	      </element>
+	      
+	</div>
+</section>

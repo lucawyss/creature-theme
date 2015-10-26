@@ -1,0 +1,40 @@
+title: Features
+@extends: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/features
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/features
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+        features:
+          type: tab
+          title: Partners
+          fields:
+            header.partners:
+              name: partners
+              type: list
+              label: Partners
+
+              fields:
+                .header:
+                  type: text
+                  label: Name
+                .image:
+                  type: text
+                  label: Image
+                .url:
+                  type: text
+                  label: Link

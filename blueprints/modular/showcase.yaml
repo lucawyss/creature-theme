@@ -34,12 +34,12 @@ form:
                 .url:
                   type: text
                   label: URL
-                .primary:
+                .icon:
+                  type: text
+                  label: Icon Shortcut
+                .side:
                   type: toggle
-                  label: Primary
-                  highlight: 1
+                  label: Side of the icon
                   options:
-                      1: Yes
-                      0: No
-                  validate:
-                      type: bool
+                      true: Left
+                      false: Right

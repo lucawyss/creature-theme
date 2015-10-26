@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+// Mixins
+@import "components/prefixer";
+@import "components/mixins";
+
+// Variables;
+@import "myColor"; // Custom Colors
+@import "myVariables"; // CUSTOM SETTINGS !!
+@import "components/variables";
+
+// Reset
+@import "components/normalize";
+
+// components
+@import "components/global";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+// @import "components/roboto";
+@import "myTypography"; // Custom Typography
+@import "components/cards";
+// @import "components/toast";
+// @import "components/tabs";
+// @import "components/tooltip";
+@import "components/buttons";
+@import "components/dropdown";
+@import "components/waves";
+// @import "components/modal";
+@import "components/collapsible";
+@import "components/chips";
+// @import "components/materialbox";
+@import "components/form";
+// @import "components/table_of_contents";
+@import "components/sideNav";
+// @import "components/preloader";
+// @import "components/slider";
+
+
+
+/********** Customs Styles *************
+* layout
+* header #header
+* section .showcase
+* section .about
+* section .projects
+* section .partners
+* section .team
+* section .contact
+* section .quotes 
+* footer
+* pages
+****************************************/
+
+// LAYOUT
+.section {
+	min-height: 500px; /* older browsers */
+	min-height: 100vh;
+	&:target{
+		padding-top:60px;
+	}
+}
+
+
+// HEADER
+#header {
+	font-size: 2em;
+	font-family: $font-family-header;
+	position: fixed;
+	height: 100px;
+	box-shadow: none;
+	z-index: 2;
+	background-color: rgba($primary-color,0);
+	transition: all 0.5s ease 0s;
+	.nav-wrapper {padding: 15px 0 25px;transition: all 0.5s ease 0s}
+	&.scrolled {
+		font-size: 1em;
+		height: 65px;
+		background-color: rgba($primary-color,1);
+		@extend .z-depth-3;
+		.nav-wrapper {padding: 0px;}
+	}
+}
+.brand-logo {opacity: 0;}
+nav ul li {
+	transition: all 0.2s ease 0s;
+	border-bottom: 2px solid transparent;
+	&:hover {
+	background-color: transparent;
+	border-bottom: 2px solid white;
+	}
+}
+.scrolled {
+	.brand-logo {opacity: 1;}
+	ul li:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+		border-bottom: 2px solid transparent;
+		}
+}
+.side-nav {
+	font-family: $font-family-header;
+	background-color: $secondary-color;
+	li a {border-bottom: 1px solid rgba(0, 0, 0, 0.125);}
+	li.close {
+		&:hover {
+			background-color: transparent;
+			a {
+				color: white;
+				border-bottom: 0px none;
+				padding: 0px;
+				cursor: pointer;
+			}
+		}
+		a {
+			border-bottom: 0px none;
+			padding: 0px;
+			text-align: right;
+		}
+	}
+}
+.side-nav li:last-child a {
+	border-bottom: 0px none;
+}
+
+
+// SHOWCASE
+.showcase .btn-flat {
+		border: 1px solid white;
+		&:hover {border: 1px solid transparent;}
+}
+.btn-flat {
+	color:inherit;
+}
+.btn {
+	font-family: $font-family-header;
+	margin: 1rem;
+}
+h2 + h3 {
+	font-size: 1.9rem;
+	margin-bottom: 2rem;
+}
+
+
+// INFO
+.collapsible-body {
+	background-color: white;
+}
+.about {
+	background-color: $grey-color;
+	.collapsible-header {
+		margin: 0px;
+	}
+}
+
+
+// Projects
+.projects {
+	background-color: $secondary-color;
+}
+
+
+// Partners
+.partners {
+	background-color: $secondary-color;
+	article {margin: 1rem 0px 2rem;}
+	img {
+		@extend .responsive-img;
+	}
+}
+
+
+// Team
+.team {
+	background-color: $grey-color;
+	.card-panel {
+		background-color: $primary-color;
+	}
+	.z-depth-1:hover {@extend .z-depth-2;}
+	.portrait .card-panel {cursor: pointer;}
+	#teamContent {
+		.card-panel {
+			max-height: 15rem;
+			width: 100%;
+			transition: 
+				width 0.5s ease 0s,
+				padding 0.1s ease 0s,
+				margin 0.1s ease 0s,
+				max-height 0.5s ease 0.5s;
+		}
+		.card-content, .card-action, a {
+			visibility: visible;
+			opacity:1;
+			transition: 
+				visibility 0.4s ease 0.5s,
+				opacity 0.5s ease 1s;
+			}
+		.hidden {
+			max-height: 0;
+			width: 0;
+			padding:0;
+			margin:0;
+				transition: 
+				all 0.4s ease 0.2s;
+			.card-content, .card-action, a {
+				visibility:hidden;
+				opacity:0;
+				transition: 
+					visibility 0.2s ease 0.2s,
+					opacity 0.2s ease 0s;
+			}
+		}
+	}
+}
+
+
+// Contact
+.contact {
+	background-color: $secondary-color;
+	.card-panel {
+		background-color: white;
+	}
+}
+
+
+// FOOTER
+footer.page-footer {
+    margin-top: 0px;
+    }
+
+// Translate tabs
+#lang {
+	top: auto;
+	left: auto;
+	right: 0px;
+	bottom: -60px;
+	position: fixed;
+	min-width: 120px;
+	font-size: 0.8rem;
+	font-family: $font-family-header;
+	transition: all 0.5s ease 0s;
+	&.scrolled {bottom: 0px;}
+	#picker {
+		margin-bottom:5px;
+		visibility: hidden;
+		li { padding: 10px;}
+	}
+	&:hover #picker {visibility: visible;}
+	.toggle {
+		border-bottom: 2px solid $secondary-color;
+		padding: 10px;
+	}
+	.parts {
+		border-radius: 2px 2px 0px;
+		background-color: white;
+	}
+}
+    
+// PAGES
+.side-nav .collapsible-header {
+	line-height: 64px;
+}
+.page .brand-logo {opacity: 1;}
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 0.9rem;
+}
+.content img {
+	@extend .responsive-img;
+	@extend .s12;
+	@extend .m4;
+}
+
+// js used:
+// collapsible, sidevbar, parallax, waves, dropdown 
+// transitions ?? scrollFire ??

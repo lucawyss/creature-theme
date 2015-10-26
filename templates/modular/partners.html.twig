@@ -1,0 +1,16 @@
+<section id="partners" class="partners section">
+	<div class="row container">
+	    <h2 class="header">{{ page.title }}</h2>
+	    	{% for partner in page.header.partners %}
+		        <article class="col s6 m4 l3">
+		        	{% if (partner.url) and (partner.image) %}
+			        <a href="{{ partner.url }}">
+	                	<img src="{{ partner.image }}" alt="{{ partner.header }}">
+	                </a>
+	                {% elseif feature.image and not feature.url %}
+	                	<img src="{{ partner.image }}" alt="{{ partner.header }}">
+	                {% endif %}
+			    </article>
+		    {% endfor %}
+	</div>
+</section>

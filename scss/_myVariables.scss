@@ -1,0 +1,46 @@
+/*** Colors ***/
+// color orange / indigo
+$primary-color: color("indigo", "lighten-1");
+$secondary-color: color("orange", "base");
+$success-color: color("teal", "lighten-2");
+$error-color: color("red", "base");
+$link-color: $secondary-color;
+
+/*** Typo colors ***/
+$grey-color: color("indigo", "lighten-5");
+$off-black: rgba(0, 0, 0, 0.70);
+
+// Header Styles
+$h1-fontsize: 3.2rem !default;
+$h2-fontsize: 2.76rem !default;
+$h3-fontsize: 2.32rem !default;
+$h4-fontsize: 1.88rem !default;
+$h5-fontsize: 1.44rem !default;
+$h6-fontsize: 1rem !default;
+
+/*** Cards ***/
+$card-link-color: $primary-color;
+
+/*** Fonts ***/
+$font-family-default:  			"Alegreya", "Geneva", "Arial", serif;
+$font-family-header:  			"Varela Round", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-mono: 				"Courier New", monospace;
+$font-family-serif:				"Georgia", "Times", "Times New Roman", serif;
+
+/*** Global ***/
+// Media Query Ranges
+$small-screen: 600px;
+$medium-screen: 992px;
+$large-screen: 1200px;
+$small-screen-up: $small-screen + 1;
+$medium-screen-up: $medium-screen + 1;
+$large-screen-up: $large-screen + 1;
+
+// Grid Variables
+$num-cols: 12;
+$gutter-width: 3rem;
+$element-top-margin: $gutter-width/3;
+$element-bottom-margin: ($gutter-width*2)/3;
+
+//sideNav
+$sidenav-bg-color: $grey-color;

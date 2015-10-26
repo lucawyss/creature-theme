@@ -1,0 +1,33 @@
+<section class="projects section">
+	<div class="row container">
+	    <h2 class="header">{{ page.title }}</h2>
+	      
+	        <article class="col s12 m6">
+	          <div class="card-panel">
+	            <span class="flow-text">
+	            	{{ page.content }}
+	            </span>
+	    	  </div>
+		  	</article>
+		  	
+		  	{% for project in page.find('/projects').children %}
+					
+		  		{% set main_image = project.media.images|first %}
+				<article class="col s12 m6">
+		          <div class="card">
+		            <div class="card-image">
+		              <img src="{{ main_image.url }}">
+		              <span class="card-title">{{ p.title }}</span>
+		            </div>
+		            <div class="card-content">
+		              {{ project.summary }}
+		            </div>
+		            <div class="card-action">
+		              <a href="{{ project.url }}">Read more ...</a>
+		            </div>
+		          </div>
+		        </article>
+	        {% endfor %}
+	                
+	</div>
+</section>
