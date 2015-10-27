@@ -21,20 +21,20 @@ form:
                   @data-options: '\Grav\Common\Page\Pages::modularTypes'
         features:
           type: tab
-          title: Features
+          title: Members
           fields:
-            header.features:
-              name: features
+            header.members:
+              name: members
               type: list
-              label: Features
+              label: Members
 
               fields:
+                .name:
+                  type: text
+                  label: Name
                 .image:
                   type: text
-                  label: Image
-                .header:
-                  type: text
-                  label: Header
-                .url:
-                  type: text
-                  label: Link
+                  label: Photo
+                .bio:
+                  type: textarea
+                  label: Biographie

@@ -32,5 +32,5 @@ form:
                   type: text
                   label: Header
                 .content:
-                  type: textarea
+                  type: markdown
                   label: Content
