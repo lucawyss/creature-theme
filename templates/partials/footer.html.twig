@@ -27,8 +27,8 @@
     {% block copyright %}   
         <div class="footer-copyright">
             <div class="container">
-            {{ 'CREATURE.COPYRIGHT' |t }}
-            <a class="grey-text text-lighten-4 right" href="#!">Credits</a>
+            {{ 'CREATURE.COPYRIGHT' |t }} {{ "now"|date("Y") }} <a href="/#top">{{ site.title|e('html') }}</a>
+            <i class="icon-code"></i> designed by <a href="http://www.lucawyss.com">luca wyss</a>
             </div>
         </div>
     {% endblock %}

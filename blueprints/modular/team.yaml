@@ -19,6 +19,10 @@ form:
                 header.template:
                   default: modular/features
                   @data-options: '\Grav\Common\Page\Pages::modularTypes'
+        content:
+          fields:
+            content:
+              type: hidden
         features:
           type: tab
           title: Members

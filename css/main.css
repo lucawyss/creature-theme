@@ -444,7 +444,7 @@ ul {
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2, .team .z-depth-1:hover, .team nav:hover, .team .card-panel:hover, .team .card:hover, .team .btn:hover, .team .btn-large:hover, .team .btn-floating:hover, .team .dropdown-content:hover, .team .collapsible:hover, .team .side-nav:hover {
+.z-depth-2 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-3, #header.scrolled, #header.noshow {
@@ -3873,6 +3873,9 @@ small {
 .thin {
   font-weight: 200; }
 
+address {
+  font-style: normal; }
+
 .flow-text {
   font-weight: 300; }
   @media only screen and (min-width: 360px) {
@@ -5501,13 +5504,11 @@ h2 + h3 {
   background-color: #e8eaf6; }
   .team .card-panel {
     background-color: #5c6bc0; }
-  .team .portrait .card-panel {
-    cursor: pointer; }
   .team .btn-floating {
     float: right;
-    margin: -5px 5px; }
+    margin: -65px 5px 0px; }
   .team #teamContent .card-panel {
-    max-height: 15rem;
+    max-height: 20rem;
     width: 100%;
     overflow: hidden;
     transition: width 0.5s ease 0s, padding 0.1s ease 0s, margin 0.1s ease 0s, max-height 0.5s ease 0.5s; }
@@ -5525,6 +5526,10 @@ h2 + h3 {
       visibility: hidden;
       opacity: 0;
       transition: visibility 0.2s ease 0.2s, opacity 0.2s ease 0s; }
+
+.chip:hover a {
+  color: black;
+  transition: color 0.3s ease; }
 
 .contact {
   background-color: #ff9800; }

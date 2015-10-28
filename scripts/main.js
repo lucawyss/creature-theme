@@ -8,8 +8,6 @@ $( document ).ready(function(){
 	$(".dropdown-button").dropdown({hover: true,belowOrigin: true});       
 	
 	$('.team article').click(function() {
-		$(this).find('.card-panel').toggleClass('z-depth-2');
-		$('.team article').not(this).find('.card-panel').removeClass('z-depth-2');
 		var target = $(this).data("target");
 		$('#teamContent #' + target).toggleClass('hidden');
 		$('#teamContent').children().not( '#' + target).addClass('hidden');

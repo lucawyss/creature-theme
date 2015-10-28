@@ -187,12 +187,10 @@ h2 + h3 {
 	.card-panel {
 		background-color: $primary-color;
 	}
-	.z-depth-1:hover {@extend .z-depth-2;}
-	.portrait .card-panel {cursor: pointer;}
-	.btn-floating {float: right;margin: -5px 5px;}
+	.btn-floating {float: right;margin: -65px 5px 0px;}
 	#teamContent {
 		.card-panel {
-			max-height: 15rem;
+			max-height: 20rem;
 			width: 100%;
 			overflow:hidden;
 			transition: 
@@ -225,6 +223,10 @@ h2 + h3 {
 		}
 	}
 }
+.chip:hover a {
+	color:black;
+	transition: color 0.3s ease;
+	}
 
 
 // Contact

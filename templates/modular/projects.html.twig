@@ -13,7 +13,7 @@
 		  	
 		  	{% for project in page.find('/projects').children %}
 					
-		  		{% set main_image = project.media.images|first %}
+		  		{% set main_image = project.media.images|first.brightness(-35) %}
 				<article class="col s12 m6">
 		          <div class="card">
 		            <div class="card-image">

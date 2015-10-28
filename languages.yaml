@@ -9,7 +9,7 @@ en:
     EMAIL: Email
     MESSAGE: Message
     SEND_MESSAGE: Send message
-    COPYRIGHT: © 2014 Copyright Text or CC-BY-NC-SA ??
+    COPYRIGHT: © Copyright
 fr:
   CREATURE:
     LEARN_MORE: En savoir plus …
@@ -21,4 +21,4 @@ fr:
     EMAIL: Mail
     MESSAGE: Message
     SEND_MESSAGE: Envoyez le message
-    COPYRIGHT: © 2014 Droits reservés Text or CC-BY-NC-SA ??
+    COPYRIGHT: © Droits reservés

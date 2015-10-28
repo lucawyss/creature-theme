@@ -3,11 +3,11 @@
 	    	{% for partner in page.header.partners %}
 		        <article class="col s6 m4 l3">
 		        	{% if (partner.url) and (partner.image) %}
-		        	{% set logo = page.media[partner.image].grayscale().negate.brightness(150) %}
+		        	{% set logo = page.media[partner.image].resize(200, 200).grayscale().negate.brightness(150) %}
 			        <a href="{{ partner.url }}">
 	                	<img src="{{ logo.url }}" alt="{{ partner.header }}">
 	                </a>
-	                {% elseif feature.image and not feature.url %}
+	                {% elseif (feature.image) and (not feature.url) %}
 	                	<img src="{{ partner.image }}" alt="{{ partner.header }}">
 	                {% endif %}
 			    </article>

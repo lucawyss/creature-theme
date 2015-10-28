@@ -4,7 +4,42 @@
 		<div class="col s12 m6">
 	        <div class="card-panel z-depth-1">
 	            {{ page.content }}
-	            {{ "someone@domain.com" | safe_email }}
+	            <address class="vcard center">
+	            	<span class="fn">{{ site.title|e('html')|upper }}</span>
+					<div class="adr">
+						{%if page.header.contact.street %}  
+							<div class="street-address">{{ page.header.contact.street }}</div>
+						{%endif%} 
+						{%if page.header.contact.locality %}
+							<div class="locality">{{ page.header.contact.locality }}</div >
+						{%endif%}
+						{%if page.header.contact.postal_code %}
+							<div class="postal-code">{{ page.header.contact.postal_code }}</div >
+						{%endif%} 
+						{%if page.header.contact.country %}
+							<div class="country-name">{{ page.header.contact.country |upper }}</div >
+						{%endif%}
+					</div> 
+					{%if page.header.contact.phone %}
+						<div class="tel"><a href="tel:{{ page.header.contact.phone }}">{{ page.header.contact.phone }}</a></div>
+					{%endif%}
+					{%if page.header.contact.email %}
+						<a class="email" href="mailto:{{ page.header.contact.email }}">{{ page.header.contact.email | safe_email }}</a> 
+					{%else%}
+	                	<a class="email" href="mailto:{{ site.author.email }}">{{ site.author.email | safe_email }}</a>
+					{%endif%} 
+				</address>
+	            	<ul class="social">
+			            {% if page.header.contact.facebook %}
+			            	<li class="chip"><a href="{{ page.header.contact.facebook }}"><i class="icon-facebook"></i>facebook</a></li>
+			            {% endif %}
+			            {% if page.header.contact.gplus %}
+			            	<li class="chip"><a href="{{ page.header.contact.gplus }}"><i class="icon-gplus"></i>google+</a></li>
+			            {% endif %}
+			            {% if page.header.contact.twitter %}
+			            	<li class="chip"><a href="{{ page.header.contact.twitter }}"><i class="icon-twitter"></i>twitter</a></li>
+			            {% endif %}
+		            </ul>
 	        </div>
 	    </div>
 	        

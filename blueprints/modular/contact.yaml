@@ -19,3 +19,61 @@ form:
                 header.template:
                   default: modular/features
                   @data-options: '\Grav\Common\Page\Pages::modularTypes'
+        content:
+          fields:
+            uploads:
+              type: hidden
+            content:
+              label: Contact intro
+              type: textarea
+              size: large
+
+            header.contact.email:
+              type: email
+              toggleable: true
+              label: Email address
+              help: email address. If not provided, will use the email address of the author.
+              placeholder: For example: info@exemple.com
+            header.contact.phone:
+              type: text
+              toggleable: true
+              label: Phone contact
+              help: phone number with international formating.
+              placeholder: For example: +1 (555) 555 555
+            header.contact.street:
+              type: text
+              toggleable: true
+              label: Street address (with number)
+              help: street name and number of the building.
+            header.contact.locality:
+              type: text
+              toggleable: true
+              label: City
+              help: Locality name.
+              placeholder: For example: Paris
+            header.contact.postal_code:
+              type: text
+              toggleable: true
+              label: Postal code
+              help: postal code with international formating.
+              placeholder: For example: F-75001
+            header.contact.country:
+              type: text
+              toggleable: true
+              label: Country name
+              placeholder: For example: FRANCE
+            header.contact.facebook:
+              type: text
+              toggleable: true
+              label: Facebook page url
+              placeholder: For example: http://www.facebook.com/
+            header.contact.gplus:
+              type: text
+              toggleable: true
+              label: Google+ page url
+              placeholder: For example: http://plus.google.com/
+            header.contact.twitter:
+              type: text
+              toggleable: true
+              label: Twitter page url
+              placeholder: For example: http://twitter.com/
