@@ -38,3 +38,13 @@ form:
                 .bio:
                   type: textarea
                   label: Biographie
+                .website:
+                  type: text
+                  label: Website
+                .facebook:
+                  type: text
+                  label: Facebook
+                .twitter:
+                  type: text
+                  label: Twitter
+                  

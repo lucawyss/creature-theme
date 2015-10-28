@@ -1,15 +1,18 @@
-<section class="about section">
 	<div class="row container">
 	    <h2 class="header">{{ page.title }}</h2>
 	    <ul class="collapsible popout">
-	    {% for paragraph in page.header.paragraphs %}
+	    {% for paragraph in page.content|split('<hr />') %}
+	    	{% set element = paragraph|split(':') %}
 		    <li>
-		      <h5 class="collapsible-header active">{{ paragraph.header }}</h5>
+		      <h5 class="collapsible-header active">{{ element[0]}}</h5>
 		      <div class="collapsible-body">
-		      	{{ paragraph.content | markdown }}
+		      	<p>{{ element[1] }}</p>
 		      </div>
 		    </li>
 		{% endfor %}
 		</ul>
 	</div>
-</section>
+
+            
+            	
+            

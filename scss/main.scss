@@ -50,17 +50,18 @@
 * section .quotes 
 * footer
 * pages
+* blog
 ****************************************/
 
 // LAYOUT
+main {min-height: 400px;}
 .section {
 	min-height: 500px; /* older browsers */
 	min-height: 100vh;
-	&:target{
+	&:target {
 		padding-top:60px;
 	}
 }
-
 
 // HEADER
 #header {
@@ -73,7 +74,7 @@
 	background-color: rgba($primary-color,0);
 	transition: all 0.5s ease 0s;
 	.nav-wrapper {padding: 15px 0 25px;transition: all 0.5s ease 0s}
-	&.scrolled {
+	&.scrolled, &.noshow {
 		font-size: 1em;
 		height: 65px;
 		background-color: rgba($primary-color,1);
@@ -81,18 +82,18 @@
 		.nav-wrapper {padding: 0px;}
 	}
 }
-.brand-logo {opacity: 0;}
+.modular .brand-logo {opacity: 0;}
 nav ul li {
 	transition: all 0.2s ease 0s;
 	border-bottom: 2px solid transparent;
-	&:hover {
+	&:hover, &.active {
 	background-color: transparent;
 	border-bottom: 2px solid white;
 	}
 }
-.scrolled {
+.scrolled, .noshow {
 	.brand-logo {opacity: 1;}
-	ul li:hover {
+	ul li:hover, ul li.active {
 		background-color: rgba(0, 0, 0, 0.1);
 		border-bottom: 2px solid transparent;
 		}
@@ -122,6 +123,11 @@ nav ul li {
 	border-bottom: 0px none;
 }
 
+.error, .listing, .blog {
+	main section:first-child {padding-top:100px;}
+	
+}
+
 
 // SHOWCASE
 .showcase .btn-flat {
@@ -141,21 +147,27 @@ h2 + h3 {
 }
 
 
-// INFO
-.collapsible-body {
-	background-color: white;
-}
+// ABOUT
 .about {
 	background-color: $grey-color;
 	.collapsible-header {
 		margin: 0px;
 	}
+	.collapsible-body {
+		background-color: white;
+		padding: 2rem;
+	}
+	p {padding:0;margin:0;}
 }
 
 
 // Projects
 .projects {
 	background-color: $secondary-color;
+	.card {height: 28rem;}
+	.btn-floating {
+		float: right;
+		margin: -25px 18px;}
 }
 
 
@@ -177,10 +189,12 @@ h2 + h3 {
 	}
 	.z-depth-1:hover {@extend .z-depth-2;}
 	.portrait .card-panel {cursor: pointer;}
+	.btn-floating {float: right;margin: -5px 5px;}
 	#teamContent {
 		.card-panel {
 			max-height: 15rem;
 			width: 100%;
+			overflow:hidden;
 			transition: 
 				width 0.5s ease 0s,
 				padding 0.1s ease 0s,
@@ -233,6 +247,7 @@ footer.page-footer {
 	left: auto;
 	right: 0px;
 	bottom: -60px;
+	z-index: 3;
 	position: fixed;
 	min-width: 120px;
 	font-size: 0.8rem;
@@ -243,6 +258,7 @@ footer.page-footer {
 		margin-bottom:5px;
 		visibility: hidden;
 		li { padding: 10px;}
+		li:hover {border-bottom: 0px none transparent;}
 	}
 	&:hover #picker {visibility: visible;}
 	.toggle {
@@ -259,14 +275,22 @@ footer.page-footer {
 .side-nav .collapsible-header {
 	line-height: 64px;
 }
-.page .brand-logo {opacity: 1;}
+.side-nav .collapsible li {
+    overflow: hidden;}
 .dropdown-content li > a, .dropdown-content li > span {
     font-size: 0.9rem;
 }
-.content img {
-	@extend .responsive-img;
-	@extend .s12;
-	@extend .m4;
+.content {
+	img {
+		@extend .responsive-img;
+		@extend .s12;
+		@extend .m4;
+	}
+	.card-panel {
+		background-color: $secondary-color;
+		a {color: $primary-color;}
+	}
+	ul li {list-style-type: initial;margin-left: 1rem;}
 }
 
 // js used:

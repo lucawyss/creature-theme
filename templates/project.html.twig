@@ -1,0 +1,15 @@
+{% extends 'default.html.twig' %}
+
+{% block infocard %}
+
+	    	{% if page.header.card_enable %}
+	        <element class="col s12 m6 l4 right">
+	          <div class="card-panel primary">
+	            <span class="flow-text white-text">
+	            	{{ page.header.infocard | markdown }}
+	            </span>
+	    	  </div>
+		  	</element>
+		  	{% endif %}
+
+{% endblock %}

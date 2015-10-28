@@ -447,7 +447,7 @@ ul {
 .z-depth-2, .team .z-depth-1:hover, .team nav:hover, .team .card-panel:hover, .team .card:hover, .team .btn:hover, .team .btn-large:hover, .team .btn-floating:hover, .team .dropdown-content:hover, .team .collapsible:hover, .team .side-nav:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
-.z-depth-3, #header.scrolled {
+.z-depth-3, #header.scrolled, #header.noshow {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-4 {
@@ -3864,9 +3864,6 @@ h6 {
 em {
   font-style: italic; }
 
-strong {
-  font-weight: 500; }
-
 small {
   font-size: 75%; }
 
@@ -5390,7 +5387,11 @@ select {
 * section .quotes 
 * footer
 * pages
+* blog
 ****************************************/
+main {
+  min-height: 400px; }
+
 .section {
   min-height: 500px;
   /* older browsers */
@@ -5410,26 +5411,26 @@ select {
   #header .nav-wrapper {
     padding: 15px 0 25px;
     transition: all 0.5s ease 0s; }
-  #header.scrolled {
+  #header.scrolled, #header.noshow {
     font-size: 1em;
     height: 65px;
     background-color: #5c6bc0; }
-    #header.scrolled .nav-wrapper {
+    #header.scrolled .nav-wrapper, #header.noshow .nav-wrapper {
       padding: 0px; }
 
-.brand-logo {
+.modular .brand-logo {
   opacity: 0; }
 
 nav ul li {
   transition: all 0.2s ease 0s;
   border-bottom: 2px solid transparent; }
-  nav ul li:hover {
+  nav ul li:hover, nav ul li.active {
     background-color: transparent;
     border-bottom: 2px solid white; }
 
-.scrolled .brand-logo {
+.scrolled .brand-logo, .noshow .brand-logo {
   opacity: 1; }
-.scrolled ul li:hover {
+.scrolled ul li:hover, .scrolled ul li.active, .noshow ul li:hover, .noshow ul li.active {
   background-color: rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid transparent; }
 
@@ -5453,6 +5454,9 @@ nav ul li {
 .side-nav li:last-child a {
   border-bottom: 0px none; }
 
+.error main section:first-child, .listing main section:first-child, .blog main section:first-child {
+  padding-top: 100px; }
+
 .showcase .btn-flat {
   border: 1px solid white; }
   .showcase .btn-flat:hover {
@@ -5469,16 +5473,24 @@ h2 + h3 {
   font-size: 1.9rem;
   margin-bottom: 2rem; }
 
-.collapsible-body {
-  background-color: white; }
-
 .about {
   background-color: #e8eaf6; }
   .about .collapsible-header {
     margin: 0px; }
+  .about .collapsible-body {
+    background-color: white;
+    padding: 2rem; }
+  .about p {
+    padding: 0;
+    margin: 0; }
 
 .projects {
   background-color: #ff9800; }
+  .projects .card {
+    height: 28rem; }
+  .projects .btn-floating {
+    float: right;
+    margin: -25px 18px; }
 
 .partners {
   background-color: #ff9800; }
@@ -5491,9 +5503,13 @@ h2 + h3 {
     background-color: #5c6bc0; }
   .team .portrait .card-panel {
     cursor: pointer; }
+  .team .btn-floating {
+    float: right;
+    margin: -5px 5px; }
   .team #teamContent .card-panel {
     max-height: 15rem;
     width: 100%;
+    overflow: hidden;
     transition: width 0.5s ease 0s, padding 0.1s ease 0s, margin 0.1s ease 0s, max-height 0.5s ease 0.5s; }
   .team #teamContent .card-content, .team #teamContent .card-action, .team #teamContent a  {
     visibility: visible;
@@ -5523,6 +5539,7 @@ footer.page-footer {
   left: auto;
   right: 0px;
   bottom: -60px;
+  z-index: 3;
   position: fixed;
   min-width: 120px;
   font-size: 0.8rem;
@@ -5535,6 +5552,8 @@ footer.page-footer {
     visibility: hidden; }
     #lang #picker li {
       padding: 10px; }
+    #lang #picker li:hover {
+      border-bottom: 0px none transparent; }
   #lang:hover #picker {
     visibility: visible; }
   #lang .toggle {
@@ -5547,10 +5566,18 @@ footer.page-footer {
 .side-nav .collapsible-header {
   line-height: 64px; }
 
-.page .brand-logo {
-  opacity: 1; }
+.side-nav .collapsible li {
+  overflow: hidden; }
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 0.9rem; }
+
+.content .card-panel {
+  background-color: #ff9800; }
+  .content .card-panel a {
+    color: #5c6bc0; }
+.content ul li {
+  list-style-type: initial;
+  margin-left: 1rem; }
 
 /*# sourceMappingURL=main.css.map */

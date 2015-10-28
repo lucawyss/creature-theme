@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round|Alegreya:400,400italic,700">
 	
     {% block stylesheets %}
+    	{% do assets.addCss('theme://css/fontello.css', 101) %}
         {% do assets.addCss('theme://css/main.css', 100) %}
 
         {% if browser.getBrowser == 'msie' and browser.getVersion <= 9 %}
@@ -30,11 +31,11 @@
 
 {% endblock head%}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
+<body id="top" class="{{ page.template }} {{ page.header.body_classes }}">
 
         {% block header %}
         	<header>
-        		<nav id="header">
+        		<nav id="header" class="{% if page.template in ['error','blog','listing'] %}noshow{%endif%}">
 				    <div class="nav-wrapper container">
 					    <a href="/#top" class="brand-logo">{{ site.title|e('html') }}</a>
 					    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>

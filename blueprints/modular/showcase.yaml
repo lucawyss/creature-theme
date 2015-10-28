@@ -33,7 +33,11 @@ form:
                   label: Text
                 .url:
                   type: text
-                  label: URL
+                  label: Link to an external URL
+                .pagelink:
+                  type: pages
+                  default: ''
+                  label: or Link to a local page
                 .icon:
                   type: text
                   label: Icon Shortcut

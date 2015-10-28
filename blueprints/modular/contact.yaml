@@ -19,22 +19,3 @@ form:
                 header.template:
                   default: modular/features
                   @data-options: '\Grav\Common\Page\Pages::modularTypes'
-        features:
-          type: tab
-          title: Features
-          fields:
-            header.features:
-              name: features
-              type: list
-              label: Features
-
-              fields:
-                .image:
-                  type: text
-                  label: Image
-                .header:
-                  type: text
-                  label: Header
-                .url:
-                  type: text
-                  label: Link

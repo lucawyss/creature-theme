@@ -19,18 +19,3 @@ form:
                 header.template:
                   default: modular/features
                   @data-options: '\Grav\Common\Page\Pages::modularTypes'
-        features:
-          type: tab
-          title: Paragraphs
-          fields:
-            header.paragraphs:
-              name: paragraphs
-              type: list
-              label: Paragraphs
-              fields:
-                .header:
-                  type: text
-                  label: Header
-                .content:
-                  type: markdown
-                  label: Content

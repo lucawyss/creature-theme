@@ -1,20 +1,22 @@
 {% set showcase_image = page.media.images|first.grayscale().contrast(40).brightness(-110).colorize(15,70,145) %}
 
 
-	<section class="showcase section parallax-container valign-wrapper">
 	    <div class="parallax">
 	    	<img src="{{ showcase_image.url }}">
 	    </div>
 	    <div class="row container white-text">
 					<h2 class="center-align">{{ page.title }}</h2>
-				{% if page.header.subtitle %}
-					<h3 class="center-align">{{ page.header.subtitle }}</h3>
-				{% endif %}
+					<h3 class="center-align">{{ page.content }}</h3>
 				
 				{% if page.header.buttons %}
 					<div class="center-align">
 					{% for button in page.header.buttons %}
-						<a class="waves-effect waves-light btn-large btn-flat white-text" href="{{ button.url }}">
+						{% if button.url %}
+							{% set link = button.url %}
+						{% else %}
+							{% set link = button.pagelink %}
+						{% endif %}
+						<a class="waves-effect waves-light btn-large btn-flat white-text" href="{{ link }}">
 							<i class="material-icons{% if button.side %} left{% else %} right{% endif %}">{{ button.icon }}</i>
 							{{ button.text }}
 						</a>
@@ -23,4 +25,3 @@
 				{% endif %}
 				
 	    </div>
-	</section>

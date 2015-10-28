@@ -1,32 +1,33 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_','é':'e','è':'e','ê':'e','à':'a','ù':'u'}) }}{% endmacro %}
+
 <footer class="page-footer z-depth-4">
 
 	{% block sitemap %} 
         <div class="container row">
-	          
-            <div class="col l4 s12">
-                <h5 class="white-text">What is Creature ?</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.
-	                <br/> add Social media menu here.
-	                <br/> & short description
-	                <br/> & link to mediakit ?  
-	                </p>
-            </div>
-              
-			<div class="col l3 offset-l1 s12">
-                <h5 class="white-text">Sitemap</h5>
+            
+            {% for page in pages.children.visible %}
+			<div class="col s12 l4">
+                <h5 class="white-text">{{ page.menu }}</h5>
                 <ul>
-				    {% for page in pages.children.visible %}
-				            <li><a class="grey-text text-lighten-3" href="{{ page.url }}">{{ page.menu }}</a></li>
-				    {% endfor %}
+                	{% if page.template == 'modular' %}
+                		{% for module in page.collection() %}
+				            <li><a class="grey-text text-lighten-3" href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+						{% endfor %}
+                	{% else %}
+				    	{% for child in page.children.visible %}
+				            <li><a class="grey-text text-lighten-3" href="{{ child.url }}">{{ child.menu }}</a></li>
+						{% endfor %}
+				    {% endif %}
 				</ul>
             </div>
+            {% endfor %}
         </div>
     {% endblock %}
         
     {% block copyright %}   
         <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text or CC-BY-NC-SA ??
+            {{ 'CREATURE.COPYRIGHT' |t }}
             <a class="grey-text text-lighten-4 right" href="#!">Credits</a>
             </div>
         </div>

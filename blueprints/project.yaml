@@ -1,0 +1,26 @@
+title: Project
+@extends: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            info_card:
+              type: section
+              title: Info Card
+              underline: true
+            header.card_enable:
+              type: toggle
+              label: Enable info card
+              classes: fancy
+              default: false
+              highlight: true
+              options:
+                true: 'Enable'
+                false: 'Disable'
+            header.infocard:
+              type: markdown
+              label: Content of the info card
+              classes: fancy         	  

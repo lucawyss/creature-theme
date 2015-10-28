@@ -1,2 +1,24 @@
 en:
-  TRANSLATION_TEST: Antimatter!
+  CREATURE:
+    LEARN_MORE: Learn more …
+    ERROR: Error 
+    EMAIL_SUMMARY: Here is the summary of what you wrote to us:
+    SEND_US: Send us a message
+    FIRST_NAME: First Name
+    LAST_NAME: Last Name
+    EMAIL: Email
+    MESSAGE: Message
+    SEND_MESSAGE: Send message
+    COPYRIGHT: © 2014 Copyright Text or CC-BY-NC-SA ??
+fr:
+  CREATURE:
+    LEARN_MORE: En savoir plus …
+    ERROR: Erreur 
+    EMAIL_SUMMARY: Ci-dessous le contenu de votre email:
+    SEND_US: Écrivez-nous
+    FIRST_NAME: Prénom
+    LAST_NAME: Nom
+    EMAIL: Mail
+    MESSAGE: Message
+    SEND_MESSAGE: Envoyez le message
+    COPYRIGHT: © 2014 Droits reservés Text or CC-BY-NC-SA ??
