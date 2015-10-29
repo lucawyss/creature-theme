@@ -163,7 +163,7 @@ h2 + h3 {
 
 // Projects
 .projects {
-	background-color: $secondary-color;
+	background-color: $primary-color;
 	.card {height: 28rem;}
 	.btn-floating {
 		float: right;
@@ -274,6 +274,9 @@ footer.page-footer {
 }
     
 // PAGES
+.content, footer {
+	a:hover {text-decoration: underline;}
+}
 .side-nav .collapsible-header {
 	line-height: 64px;
 }

@@ -1,13 +1,13 @@
 /*** Colors ***/
-// color orange / indigo
-$primary-color: color("indigo", "lighten-1");
-$secondary-color: color("orange", "base");
+// color pink / blue
+$primary-color: color("pink", "base");
+$secondary-color: color("blue", "base");
 $success-color: color("teal", "lighten-2");
 $error-color: color("red", "base");
 $link-color: $secondary-color;
 
 /*** Typo colors ***/
-$grey-color: color("indigo", "lighten-5");
+$grey-color: color("pink", "lighten-5");
 $off-black: rgba(0, 0, 0, 0.70);
 
 // Header Styles
