@@ -54,12 +54,14 @@
 ****************************************/
 
 // LAYOUT
-main {min-height: 400px;}
-.section {
-	min-height: 500px; /* older browsers */
-	min-height: 100vh;
-	&:target {
-		padding-top:60px;
+main {
+	min-height: 400px;
+	.modular {
+		min-height: 500px; /* older browsers */
+		min-height: 100vh;
+		&:target {
+			padding-top:60px;
+		}
 	}
 }
 
@@ -144,6 +146,9 @@ nav ul li {
 h2 + h3 {
 	font-size: 1.9rem;
 	margin-bottom: 2rem;
+}
+.parallax img {
+	min-width: 100.1%;
 }
 
 

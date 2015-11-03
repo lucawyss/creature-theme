@@ -22,10 +22,10 @@
 	<section id="content" class="content section">
 	    <div class="row container">
 	    <h4>{{ page.title }}</h4>
-	    {% block infocard %}{% endblock %}
-	      <div class="col s12 m6 l8">
-	       {{ page.content }}
-	      </div>
+	    	<div class="col s12">
+				{% block infocard %}{% endblock %}
+				{{ page.content }}
+			</div>
 	    </div>
 	</section>
 {% endblock %}

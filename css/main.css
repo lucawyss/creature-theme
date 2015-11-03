@@ -5394,13 +5394,12 @@ select {
 ****************************************/
 main {
   min-height: 400px; }
-
-.section {
-  min-height: 500px;
-  /* older browsers */
-  min-height: 100vh; }
-  .section:target {
-    padding-top: 60px; }
+  main .modular {
+    min-height: 500px;
+    /* older browsers */
+    min-height: 100vh; }
+    main .modular:target {
+      padding-top: 60px; }
 
 #header {
   font-size: 2em;
