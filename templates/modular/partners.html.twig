@@ -1,7 +1,7 @@
 	<div class="row container">
-	    <h2 class="header">{{ page.title }}</h2>
+	    <h4 class="header">{{ page.title }}</h4>
 	    	{% for partner in page.header.partners %}
-		        <article class="col s6 m4 l3">
+		        <article class="col s4 m3 l2">
 		        	{% if (partner.url) and (partner.image) %}
 		        	{% set logo = page.media[partner.image].resize(200, 200).grayscale().negate.brightness(150) %}
 			        <a href="{{ partner.url }}" target="_blank">

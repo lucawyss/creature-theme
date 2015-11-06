@@ -95,7 +95,7 @@ nav ul li {
 }
 .scrolled, .noshow {
 	.brand-logo {opacity: 1;}
-	ul li:hover, ul li.active {
+	ul li:hover, ul li.active, a.active {
 		background-color: rgba(0, 0, 0, 0.1);
 		border-bottom: 2px solid transparent;
 		}
@@ -193,6 +193,10 @@ h2 + h3 {
 		background-color: $primary-color;
 	}
 	.btn-floating {float: right;margin: -65px 5px 0px;}
+	@media #{$large-and-up} {
+		.btn-floating {margin: -95px 5px 0px;}
+		.circle {padding: 20px;}
+	}
 	#teamContent {
 		.card-panel {
 			max-height: 20rem;
@@ -246,6 +250,7 @@ h2 + h3 {
 // FOOTER
 footer.page-footer {
     margin-top: 0px;
+    a {color:#fff;}
     }
 
 // Translate tabs

@@ -3,11 +3,11 @@
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_','é':'e','è':'e','ê':'e','à':'a','ù':'u'}) }}{% endmacro %}
 
 {% block header_navigation %}
-    <ul class="right hide-on-med-and-down">
+    <ul class="navigation right hide-on-med-and-down">
         {% for module in page.collection() %}
 
             {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
-            <li class="{{ current_module }}"><a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+            <li><a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
 
         {% endfor %}
     </ul>
@@ -19,7 +19,7 @@
         {% for module in page.collection() %}
 
             {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
-            <li class="{{ current_module }}"><a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
+            <li><a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
 
         {% endfor %}
         {% for item in page.header.menuitems %}
@@ -32,7 +32,7 @@
 
 {% block content %}
     {% for module in page.collection() %}
-        <section id="{{ _self.pageLinkName(module.menu) }}" class="{{ module.template |replace({'/':' '}) }} section{% if module.template == 'modular/showcase' %} parallax-container valign-wrapper{%elseif module.template == 'modular/parallax'%} parallax-container hide-on-small-only{% endif %}">
+        <section id="{{ _self.pageLinkName(module.menu) }}" class="{{ module.template |replace({'/':' '}) }} section scrollspy{% if module.template == 'modular/showcase' %} parallax-container valign-wrapper{%elseif module.template == 'modular/parallax'%} parallax-container hide-on-small-only{% endif %}">
         {{ module.content }}
         </section>
     {% endfor %}

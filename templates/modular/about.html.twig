@@ -1,5 +1,5 @@
 	<div class="row container">
-	    <h2 class="header">{{ page.title }}</h2>
+	    <h4 class="header">{{ page.title }}</h4>
 	    <ul class="collapsible popout">
 	    {% for paragraph in page.content|split('<hr />') %}
 	    	{% set element = paragraph|split(':') %}

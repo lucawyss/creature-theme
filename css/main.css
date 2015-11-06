@@ -3808,7 +3808,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Alegreya", "Geneva", "Arial", serif;
+  font-family: "Garamond", "Georgia", serif;
   scroll-behavior: smooth;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.7); }
@@ -5432,7 +5432,7 @@ nav ul li {
 
 .scrolled .brand-logo, .noshow .brand-logo {
   opacity: 1; }
-.scrolled ul li:hover, .scrolled ul li.active, .noshow ul li:hover, .noshow ul li.active {
+.scrolled ul li:hover, .scrolled ul li.active, .scrolled a.active, .noshow ul li:hover, .noshow ul li.active, .noshow a.active {
   background-color: rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid transparent; }
 
@@ -5475,6 +5475,9 @@ h2 + h3 {
   font-size: 1.9rem;
   margin-bottom: 2rem; }
 
+.parallax img {
+  min-width: 100.1%; }
+
 .about {
   background-color: #fce4ec; }
   .about .collapsible-header {
@@ -5506,6 +5509,11 @@ h2 + h3 {
   .team .btn-floating {
     float: right;
     margin: -65px 5px 0px; }
+  @media only screen and (min-width: 993px) {
+    .team .btn-floating {
+      margin: -95px 5px 0px; }
+    .team .circle {
+      padding: 20px; } }
   .team #teamContent .card-panel {
     max-height: 20rem;
     width: 100%;
@@ -5537,6 +5545,8 @@ h2 + h3 {
 
 footer.page-footer {
   margin-top: 0px; }
+  footer.page-footer a {
+    color: #fff; }
 
 #lang {
   top: auto;

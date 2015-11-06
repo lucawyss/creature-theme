@@ -1,0 +1,44 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+{% set showcase_image = page.media.images|first.grayscale().contrast(40).brightness(-20).colorize(100,-100,-20) %}
+
+	<section class="showcase section parallax-container valign-wrapper">
+	    <div class="parallax">
+	    	<img src="{{ showcase_image.url }}">
+	    </div>
+	    <div class="row container white-text">
+			<h2 class="center-align">{{ page.title }}</h2>		
+			
+					<div class="center-align">
+						<a class="waves-effect waves-light btn-large btn-flat white-text" href="#content">
+							<i class="material-icons left">expand_more</i>
+							{{ 'CREATURE.LEARN_MORE' |t}}
+						</a>
+					</div>						
+	    </div>
+	</section>
+	
+	<section id="content" class="content section">
+	    <div class="row container">
+	    <h4>{{ page.title }}</h4>
+	    	<div class="col s12">
+				{% block infocard %}
+
+			    	{% if page.header.card_enable %}
+			        <element class="col s12 m6 right">
+			          <div class="card-panel primary">
+			            <span class="flow-text white-text">
+			            	{{ page.header.infocard | markdown }}
+			            </span>
+			    	  </div>
+				  	</element>
+				  	{% endif %}
+
+		  		{% endblock %}
+				{{ page.content }}
+				{{ jscomments() }}
+			</div>
+	    </div>
+	</section>
+{% endblock %}
