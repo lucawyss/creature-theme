@@ -37,7 +37,7 @@ form:
                   type: text
                   label: Name
                 .image:
-                  type: text
+                  type: pagemediaselec
                   label: Photo
                 .bio:
                   type: textarea
@@ -48,6 +48,9 @@ form:
                 .facebook:
                   type: text
                   label: Facebook
+                .linkedin:
+                  type: text
+                  label: Linkedin
                 .twitter:
                   type: text
                   label: Twitter

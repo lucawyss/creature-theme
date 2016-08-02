@@ -20,16 +20,16 @@
 // @import "components/roboto";
 @import "myTypography"; // Custom Typography
 @import "components/cards";
-// @import "components/toast";
+//@import "components/toast";
 // @import "components/tabs";
-// @import "components/tooltip";
+@import "components/tooltip";
 @import "components/buttons";
 @import "components/dropdown";
 @import "components/waves";
 // @import "components/modal";
 @import "components/collapsible";
 @import "components/chips";
-// @import "components/materialbox";
+@import "components/materialbox";
 @import "components/form";
 // @import "components/table_of_contents";
 @import "components/sideNav";
@@ -72,7 +72,7 @@ main {
 	position: fixed;
 	height: 100px;
 	box-shadow: none;
-	z-index: 2;
+	z-index: 3;
 	background-color: rgba($primary-color,0);
 	transition: all 0.5s ease 0s;
 	.nav-wrapper {padding: 15px 0 25px;transition: all 0.5s ease 0s}
@@ -95,7 +95,7 @@ nav ul li {
 }
 .scrolled, .noshow {
 	.brand-logo {opacity: 1;}
-	ul li:hover, ul li.active, a.active {
+	ul li:hover {
 		background-color: rgba(0, 0, 0, 0.1);
 		border-bottom: 2px solid transparent;
 		}
@@ -125,9 +125,12 @@ nav ul li {
 	border-bottom: 0px none;
 }
 
-.error, .listing, .blog {
+.error, .listing {
 	main section:first-child {padding-top:100px;}
-	
+	.card-panel {height: 25rem;}
+	@media #{$large-and-up} {
+		.flow-text {font-size: 1.4rem;}
+	}
 }
 
 
@@ -169,7 +172,7 @@ h2 + h3 {
 // Projects
 .projects {
 	background-color: $primary-color;
-	.card {height: 28rem;}
+	.card {height: 25rem;}
 	.btn-floating {
 		float: right;
 		margin: -25px 18px;}
@@ -192,46 +195,96 @@ h2 + h3 {
 	.card-panel {
 		background-color: $primary-color;
 	}
-	.btn-floating {float: right;margin: -65px 5px 0px;}
+	.btn-floating {float: left;margin: -50px 5px 0px;}
 	@media #{$large-and-up} {
-		.btn-floating {margin: -95px 5px 0px;}
+		.btn-floating {margin: -65px 5px 0px;}
 		.circle {padding: 20px;}
 	}
-	#teamContent {
-		.card-panel {
-			max-height: 20rem;
-			width: 100%;
-			overflow:hidden;
-			transition: 
-				width 0.5s ease 0s,
-				padding 0.1s ease 0s,
-				margin 0.1s ease 0s,
-				max-height 0.5s ease 0.5s;
+	.btn-floating {
+		z-index:2;
+		i {transform: rotate(45deg);
+			transition: all 0.3s ease 0s;
 		}
-		.card-content, .card-action, a {
-			visibility: visible;
-			opacity:1;
-			transition: 
-				visibility 0.4s ease 0.5s,
-				opacity 0.5s ease 1s;
+		}
+	
+	.bio {
+			height: auto;
+			width: auto;
+			border-radius: 3px;
+			z-index: 1;
+			text-align: initial;
+
+			@media #{$medium-and-up} {
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0px 200px;
 			}
-		.hidden {
-			max-height: 0;
-			width: 0;
-			padding:0;
-			margin:0;
-				transition: 
-				all 0.4s ease 0.2s;
-			.card-content, .card-action, a {
-				visibility:hidden;
-				opacity:0;
-				transition: 
-					visibility 0.2s ease 0.2s,
-					opacity 0.2s ease 0s;
+			@media #{$medium-only} {
+				margin: 0px 60px;
+				padding-top: 10px;
+			}
+			.card-panel {
+					margin-top: -30px;
+					max-height: 30rem;
+					width: 100%;
+					overflow:hidden;
+					transition: 
+						width 0.5s ease 0s,
+						padding 0.1s ease 0s,
+						margin 0.1s ease 0s,
+						max-height 0.5s ease 0.5s;
+				}
+				.card-content, .card-action, a {
+					visibility: visible;
+					opacity:1;
+					transition: 
+						visibility 0.4s ease 0.5s,
+						opacity 0.5s ease 1s;
+				}
+		}
+	.team-name {height: 300px;transition: all 0.3s ease 0.3s;}
+	.hidden {
+		.team-name {height: 2rem;transition: all 0.3s ease 0.3s;}
+		.btn-floating i {
+				transform: rotate(0deg);
+				transition: all 0.3s ease 0s;
+			}
+		.bio {
+			transition:all 0.2s ease 0.4s;
+			@media #{$medium-and-up} {
+				.card-panel {
+					max-height: 0;
+					width: 0;
+					padding:0;
+					margin:0;
+					transition: 
+						all 0.4s ease 0.2s;
+				}
+				.card-content, .card-action {
+						visibility:hidden;
+						opacity:0;
+						transition: 
+							visibility 0.2s ease 0.2s,
+							opacity 0.2s ease 0s;
+				}
 			}
 		}
 	}
+	article {
+		visibility: visible;
+		transition:
+			opacity 0.2s ease 1s,
+			visibility 0.2s ease 0s;
+		}
+	.fade {
+		opacity:0; 
+		visibility:hidden; 
+		transition:
+			opacity 0.2s ease 0s,
+			visibility 0.2s ease 0.2s;}	
 }
+
 .chip:hover a {
 	color:black;
 	transition: color 0.3s ease;
@@ -244,6 +297,25 @@ h2 + h3 {
 	.card-panel {
 		background-color: white;
 	}
+	.hide-label label {display:none;}
+	.alert {
+		color: #FFF;
+		background-color: $secondary-color;
+		text-align: center;
+		border-radius: 2px;
+		line-height: 36px;
+		margin: 15px 0;
+	}
+	#g-recaptcha iframe {
+        transform:scale(0.77);
+        transform-origin:0;
+        transform:scale(0.77);
+        transform-origin:0 0;
+        -webkit-transform:scale(0.77);
+        transform:scale(0.77);
+        -webkit-transform-origin:0 0;
+        transform-origin:0 0;
+    }
 }
 
 
@@ -251,6 +323,7 @@ h2 + h3 {
 footer.page-footer {
     margin-top: 0px;
     a {color:#fff;}
+    .footer-copyright {font-size: 0.7rem;}
     }
 
 // Translate tabs
@@ -296,16 +369,48 @@ footer.page-footer {
     font-size: 0.9rem;
 }
 .content {
+	.wrap-image {
+		@extend .col;
+		@extend .s12;
+		@extend .m6;
+	}
 	img {
 		@extend .responsive-img;
-		@extend .s12;
-		@extend .m4;
 	}
 	.card-panel {
 		background-color: $secondary-color;
 		a {color: $primary-color;}
 	}
 	ul li {list-style-type: initial;margin-left: 1rem;}
+	hr {border:0px; clear:both;}
+}
+
+// BLOG
+.menu-spacer {height: 80px;}
+.list-item {
+	margin-bottom: 100px;
+	.btn-floating {
+		float: right;
+		margin: -35px 18px;
+	}
+	.btn:hover {text-decoration:none;}
+}
+.blog-main {
+	.breadcrumbs {
+		margin-bottom: 30px;
+		a {vertical-align: top;}
+	}
+	.list-blog-date {float:right;font-size: 0.8rem;}
+}
+.blog-sidebar {
+	.btn {margin: 0.3rem;}
+}
+span.badge {
+	position: static;
+	&.new::after {content: "";}
+}
+.blog .pagination li {
+	vertical-align: top;
 }
 
 // js used:

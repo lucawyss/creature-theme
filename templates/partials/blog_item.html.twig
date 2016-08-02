@@ -1,78 +1,67 @@
-<div class="list-item">
+<section class="list-item">
+	<div class="list-blog-header">
+			<h5><a href="{{ page.url }}">{{ page.title }}</a></h5>
 
-    {% set header_image = page.header.header_image|defined(true) %}
-    {% set header_image_width  = page.header.header_image_width|defined(900) %}
-    {% set header_image_height = page.header.header_image_height|defined(300) %}
-    {% set header_image_file = page.header.header_image_file %}
+		<span class="list-blog-date">
+			<i class="mdi mdi-calendar"></i> {{ page.date|date("F") }} {{ page.date|date("d") }}, {{ page.date|date("Y") }}
+		</span>
 
-    <div class="list-blog-header">
-        <span class="list-blog-date">
-            <span>{{ page.date|date("d") }}</span>
-            <em>{{ page.date|date("M") }}</em>
-        </span>
-        {% if page.header.link %}
-            <h4>
-                {% if page.header.continue_link is not sameas(false) %}
-                <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
-                {% endif %}
-                <a href="{{ page.header.link }}">{{ page.title }}</a>
-            </h4>
-        {% else %}
-            <h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
+		{% if page.taxonomy.tag %}
+			<span class="header-tags">
+				{% for tag in page.taxonomy.tag %}
+				<a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}"><span class="new badge">{{ tag|upper }}</span></a>
+				{% endfor %}
+			</span>
+		{% endif %}
+		
+		{% if page.header.header_image and page.header.header_image_file %}
+            {% set header_image_media = page.media.images[page.header.header_image_file] %}
+		{% else %}
+            {% set header_image_media = page.media.images|first %}
         {% endif %}
+        {{ header_image_media.cropZoom(900,300).html('', '', 'responsive-img blog-header-image') }}
+			
+		{% if truncate %}
+			<a class="btn-floating btn-large" href="{{ page.url }}">
+		            	<i class="material-icons">add</i></a>
+		{% endif %}
 
-        {% if page.taxonomy.tag %}
-        <span class="tags">
-            {% for tag in page.taxonomy.tag %}
-            <a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-            {% endfor %}
-        </span>
-        {% endif %}
-        {% if header_image %}
-            {% if header_image_file %}
-                {% set header_image_media = page.media.images[header_image_file] %}
-            {% else %}
-                {% set header_image_media = page.media.images|first %}
-            {% endif %}
-            {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
-        {% endif %}
+	</div>
 
-    </div>
+	<div class="list-blog-content">
+		{% if page.header.continue_link is sameas(false) %}
+			<p>{{ page.content }}</p>
+			{% if not truncate %}
+			{% set show_prev_next = true %}
+			{% endif %}
+		{% elseif truncate %}
+			<p>{{ page.content|truncate(550)|striptags }}</p>
+		{% else %}
+			<p>{{ page.content }}</p>
+			{% if page.header.gallery.enabled %}
+				{% include 'partials/gallery.html.twig' %}
+			{% endif %}
+			{% set show_prev_next = true %}
+		{% endif %}
+		
+		
 
-    <div class="list-blog-padding">
-
-    {% if page.header.continue_link is sameas(false) %}
-        <p>{{ page.content }}</p>
-        {% if not truncate %}
-        {% set show_prev_next = true %}
-        {% endif %}
-    {% elseif truncate and page.summary != page.content %}
-        <p>{{ page.summary }}</p>
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
-    {% elseif truncate %}
-        {% if page.summary != page.content %}
-            <p>{{ page.content|truncate(550) }}</p>
-        {% else %}
-            <p>{{ page.content }}</p>
-        {% endif %}
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
-    {% else %}
-        <p>{{ page.content }}</p>
-        {% set show_prev_next = true %}
-    {% endif %}
-
-    {% if show_prev_next %}
-
-        <p class="prev-next">
-            {% if not page.isFirst %}
-                <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Next Post</a>
-            {% endif %}
-
-            {% if not page.isLast %}
-                <a class="button" href="{{ page.prevSibling.url }}">Previous Post <i class="fa fa-chevron-right"></i></a>
-            {% endif %}
-        </p>
-    {% endif %}
-
-    </div>
-</div>
+		{% if show_prev_next %}
+				
+					<a {% if not page.isFirst %}
+						class="btn waves-effect waves-light" href="{{ page.nextSibling.url }}"
+						{% else %}
+						class="btn disabled"
+						{% endif %}
+						><i class="material-icons left">chevron_left</i>Next Post</a>
+						
+					<a {% if not page.isLast %}
+						class="btn waves-effect waves-light right" href="{{ page.prevSibling.url }}"
+						{% else %}
+						class="btn disabled right"
+						{% endif %}
+						>Previous Post<i class="material-icons right">chevron_right</i></a>
+						
+		{% endif %}
+	</div>
+</section>

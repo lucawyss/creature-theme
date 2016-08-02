@@ -3,16 +3,18 @@ $( document ).ready(function(){
 	$('.button-collapse').sideNav({closeOnClick: true});
 	$('.side-nav .close').sideNav('hide');
 	$('.scrollspy').scrollSpy();
-		      
+	
 	$('.parallax').parallax();
 	
 	$(".dropdown-button").dropdown({hover: true,belowOrigin: true});       
 	
 	$('.team article').click(function() {
-		var target = $(this).data("target");
-		$('#teamContent #' + target).toggleClass('hidden');
-		$('#teamContent').children().not( '#' + target).addClass('hidden');
+		$(this).toggleClass('hidden');
+		$('.team article').not(this).toggleClass('fade');
 	});
+	
+	$(".content iframe").wrapAll( "<div class='video-container'></div>");
+	
 	
 });
 
@@ -47,7 +49,7 @@ jQuery(document).ready(function($){
 });
 
 
-// Smotthing the scroll on Anchors
+// Smoothing the scroll on Anchors
 $(function() {
   $('#header a[href*=#]:not([href=#]), .showcase a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

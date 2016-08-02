@@ -36,68 +36,16 @@ form:
               help: image filename that exists in the page folder. If not provided, will use the first image found.
               placeholder: For example: myimage.jpg
 
-            header.header_image_width:
-              type: text
-              toggleable: true
-              label: Image Width
-              size: small
-              help: Header width in px
-              placeholder: Default is 900
-              validate:
-                type: int
-                min: 0
-                max: 5000
-
-            header.header_image_height:
-              type: text
-              toggleable: true
-              label: Image Height
-              size: small
-              help: Header height in px
-              placeholder: Default is 300
-              validate:
-                type: int
-                min: 0
-                max: 5000
-
-
-            summary:
+            gallery:
               type: section
-              title: Summary
+              title: Images Gallery
               underline: true
 
-
-            header.summary.enabled:
+            header.gallery.enabled:
               type: toggle
               toggleable: true
-              label: Summary
+              label: Enable gallery
               highlight: 1
               options:
                 1: Enabled
                 0: Disabled
-
-            header.summary.format:
-              type: select
-              toggleable: true
-              label: Format
-              classes: fancy
-              options:
-                'short': 'Use the first occurence of delimter or size'
-                'long': 'Summary delimiter will be ignored'
-
-            header.summary.size:
-              type: text
-              toggleable: true
-              label: Size
-              classes: large
-              placeholder: 300
-              validate:
-                type: int
-                min: 1
-
-            header.summary.delimiter:
-              type: text
-              toggleable: true
-              label: Summary delimiter
-              classes: large
-              placeholder: ===

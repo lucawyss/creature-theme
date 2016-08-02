@@ -9,7 +9,7 @@
 	            </a>
 	            
 	                <ul id='dropdown-{{ current_page }}' class='dropdown-content'>
-	                    {{ _self.loop(p) }}
+	                    {{ _self.loopChild(p) }}
 	                </ul>
 	        </li>
         {% else %}
@@ -20,6 +20,16 @@
 	            </a>
 	        </li>
         {% endif %}
+    {% endfor %}
+{% endmacro %}
+{% macro loopChild(page) %}
+    {% for p in page.children.visible %}
+        	<li class="{{ current_page }}">
+	            <a href="{{ p.url }}">
+	            	{% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+	                {{ p.menu }}
+	            </a>
+	        </li>
     {% endfor %}
 {% endmacro %}
 

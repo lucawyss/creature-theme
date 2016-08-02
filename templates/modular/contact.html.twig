@@ -34,7 +34,7 @@
 			            	<li class="chip"><a href="{{ page.header.contact.facebook }}" target="_blank"><i class="icon-facebook"></i> facebook</a></li>
 			            {% endif %}
 			            {% if page.header.contact.gplus %}
-			            	<li class="chip"><a href="{{ page.header.contact.gplus }}" target="_blank"><i class="icon-gplus"></i> gplus</a></li>
+			            	<li class="chip"><a href="{{ page.header.contact.gplus }}" target="_blank"><i class="icon-google"></i> gplus</a></li>
 			            {% endif %}
 			            {% if page.header.contact.twitter %}
 			            	<li class="chip"><a href="{{ page.header.contact.twitter }}" target="_blank"><i class="icon-twitter"></i> twitter</a></li>
@@ -44,41 +44,12 @@
 	    </div>
 	        
 		<div class="col s12 m6">
-			<div class="alert">{{ form.message }}</div>
-			<form class="card-panel z-depth-1" 
-					name="{{ form.name }}"
-					action="{{ uri.rootUrl ~ (form.action|default(page.route)) }}"
-					method="{{ form.method|upper|default('POST') }}">
+			<div class="card-panel z-depth-1">
 				<h5>{{ 'CREATURE.SEND_US' |t }}</h5>
-				<div class="row">
-					<div class="input-field col s6">
-			          <input name="first_name" id="first_name" type="text" class="validate" required="required">
-			          <label for="first_name">{{ 'CREATURE.FIRST_NAME' |t }}</label>
-			        </div>
-			        <div class="input-field col s6">
-			          <input name="last_name" id="last_name" type="text" class="validate" required="required">
-			          <label for="last_name">{{ 'CREATURE.LAST_NAME' |t }}</label>
-			        </div>
+				<div class="raw">
+					{% include "forms/form.html.twig" %}
 				</div>
-				<div class="row">
-			        <div class="input-field col s12">
-			          <input name="email" id="email" type="email" class="validate" required="required">
-			          <label for="email">{{ 'CREATURE.EMAIL' |t }}</label>
-			        </div>
-				</div>
-				<div class="row">
-			        <div class="input-field col s12">
-			          <textarea name="message" id="textarea" 
-			          	class="materialize-textarea"
-			          	required="required"
-			          	>{{ value|trim|e('html') }}</textarea>
-			          <label for="textarea">{{ 'CREATURE.MESSAGE' |t }}</label>
-			        </div>
-				</div>
-				<button class="btn waves-effect waves-light" type="submit" name="action">{{ 'CREATURE.SEND_MESSAGE' |t }}
-			    	<i class="material-icons right">send</i>
-				</button>
-			</form>
+			</div>
 		</div>
 		    
 	</div>

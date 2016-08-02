@@ -2,6 +2,36 @@
 
 {% block content %}
 	<section class="projects section">
-	{% include 'modular/projects.html.twig' %}
+		<div class="row container">
+	    <h4 class="header">{{ page.title }}</h4>
+	      
+	      	{% if page.content %}
+	        <article class="col s12 m6 l4">
+	          <div class="card-panel">
+	            <span class="flow-text">
+	            	{{ page.content }}
+	            </span>
+	    	  </div>
+		  	</article>
+		  	{% endif %}
+		  	
+		  	{% for page in page.collection() %}
+		  		{% set main_image = page.media.images|first.brightness(-35) %}
+				<article class="col s12 m6 l4">
+		          <div class="card">
+		            <div class="card-image">
+		              <img src="{{ main_image.url }}">
+		              <span class="card-title">{{ page.title }}</span>
+		            </div>
+		            <a class="btn-floating btn-large" href="{{ page.url }}">
+		            	<i class="material-icons">add</i></a>
+		            <div class="card-content">
+		              {{ page.summary |striptags }}
+		            </div>
+		          </div>
+		        </article>
+	        {% endfor %}
+	                
+	</div>
 	</section>
 {% endblock %}

@@ -2,7 +2,7 @@
 	    <h4 class="header">{{ page.title }}</h4>
 	      
 	      	{% if page.content %}
-	        <article class="col s12 m6">
+	        <article class="col s12 m6 l4">
 	          <div class="card-panel">
 	            <span class="flow-text">
 	            	{{ page.content }}
@@ -11,10 +11,10 @@
 		  	</article>
 		  	{% endif %}
 		  	
-		  	{% for project in page.find('/projects').children %}
+		  	{% for project in page.collection() %}
 					
 		  		{% set main_image = project.media.images|first.brightness(-35) %}
-				<article class="col s12 m6">
+				<article class="col s12 m6 l4">
 		          <div class="card">
 		            <div class="card-image">
 		              <img src="{{ main_image.url }}">
@@ -23,7 +23,7 @@
 		            <a class="btn-floating btn-large" href="{{ project.url }}">
 		            	<i class="material-icons">add</i></a>
 		            <div class="card-content">
-		              {{ project.summary }}
+		              {{ project.summary |striptags }}
 		            </div>
 		          </div>
 		        </article>

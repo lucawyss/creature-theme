@@ -6,28 +6,11 @@
 	<div class="row container">
 		{% for member in page.header.members %}
 			{% set photo = page.media[member.image] %}
-	       <article class="col s12 m4 center portrait" data-target="{{ _self.teamID(member.name) }}">
+	       <article class="col s12 m4 l3 center portrait hidden" data-target="{{ _self.teamID(member.name) }}">
 	              <img src="{{ photo.cropResize(300, 300).url }}" alt="" class="circle responsive-img">
 	              <a class="btn-floating btn-large hide-on-small-only"><i class="material-icons">add</i></a>
-	              <h6>{{ member.name }}</h6>
-	              <span class="hide-on-med-and-up">{{ member.bio | markdown }}</span>
-			            <ul class="social hide-on-med-and-up">
-			            {% if member.website %}
-			            	<li class="chip"><a href="{{ member.website }}" target="_blank"><i class="icon-network"></i>website</a></li>
-			            {% endif %}
-			            {% if member.facebook %}
-			            	<li class="chip"><a href="{{ member.facebook }}" target="_blank"><i class="icon-facebook"></i>facebook</a></li>
-			            {% endif %}
-			            {% if member.twitter %}
-			            	<li class="chip"><a href="{{ member.twitter }}" target="_blank"><i class="icon-twitter"></i>twitter</a></li>
-			            {% endif %}
-		              </ul>
-	      </article>
-	    {% endfor %}
-	      
-		  <element id="teamContent" class="col s12 hide-on-small-only">
-		  	{% for member in page.header.members %}
-		        <div id="{{ _self.teamID(member.name) }}" class="card-panel z-depth-2 hidden">
+	              <element id="{{ _self.teamID(member.name) }}" class="bio">
+		          <div class="card-panel z-depth-2">
 		            <div class="card-content white-text">
 			            <h6 class="card-title">{{ member.name }}</h6>
 			            {{ member.bio |markdown }}
@@ -40,13 +23,18 @@
 			            {% if member.facebook %}
 			            	<li class="chip"><a href="{{ member.facebook }}" target="_blank"><i class="icon-facebook"></i>facebook</a></li>
 			            {% endif %}
+			            {% if member.linkedin %}
+			            	<li class="chip"><a href="{{ member.linkedin }}" target="_blank"><i class="icon-linkedin"></i>linkedin</a></li>
+			            {% endif %}
 			            {% if member.twitter %}
 			            	<li class="chip"><a href="{{ member.twitter }}" target="_blank"><i class="icon-twitter"></i>twitter</a></li>
 			            {% endif %}
 		              </ul>
 			        </div>
-		        </div>
-			{% endfor %}
-	      </element>
+		          </div>
+		          </element>
+		          <h6 class="card-title team-name hide-on-small-only">{{ member.name }}</h6>
+	      </article>
+	    {% endfor %}
 	      
 	</div>

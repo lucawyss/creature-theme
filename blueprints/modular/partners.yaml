@@ -37,7 +37,7 @@ form:
                   type: text
                   label: Name
                 .image:
-                  type: text
+                  type: pagemediaselect
                   label: Image
                 .url:
                   type: text

@@ -35,7 +35,7 @@
 
         {% block header %}
         	<header>
-        		<nav id="header" class="{% if page.template in ['error','blog','listing'] %}noshow{%endif%}">
+        		<nav id="header" class="{% if page.template in ['error','blog','listing','item'] %}noshow{%endif%}">
 				    <div class="nav-wrapper container">
 					    <a href="/#top" class="brand-logo">{{ site.title|e('html') }}</a>
 					    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>

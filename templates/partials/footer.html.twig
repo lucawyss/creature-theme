@@ -5,7 +5,7 @@
 	{% block sitemap %} 
         <div class="container row">
             
-            {% for page in pages.children.visible %}
+            {% for page in pages.children.published %}
 			<div class="col s12 l4">
                 <h5 class="white-text">{{ page.menu }}</h5>
                 <ul>
@@ -13,8 +13,12 @@
                 		{% for module in page.collection() %}
 				            <li><a class="grey-text text-lighten-3" href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
 						{% endfor %}
+                	{% elseif page.template == 'blog' %}
+				    	{% for item in page.collection() | slice(0, 5) %}
+				            <li><a class="grey-text text-lighten-3" href="{{ item.url }}">{{ item.menu }}</a></li>
+						{% endfor %}
                 	{% else %}
-				    	{% for child in page.children.visible %}
+				    	{% for child in page.children.published | slice(0, 5) %}
 				            <li><a class="grey-text text-lighten-3" href="{{ child.url }}">{{ child.menu }}</a></li>
 						{% endfor %}
 				    {% endif %}

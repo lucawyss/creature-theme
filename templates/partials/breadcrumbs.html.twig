@@ -1,0 +1,12 @@
+{% set crumbs = breadcrumbs.get() %}
+
+{% if crumbs|length > 1 or config.plugins.breadcrumbs.show_all %}
+	<div class="breadcrumbs">
+	{% for crumb in crumbs %}
+		<a href="{{ crumb.url }}"> {{ crumb.menu }} </a><i class="material-icons">chevron_right</i></i>
+	{% endfor %}
+	{% if uri.params %}
+		<a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ uri.param('tag') }}"> {{ uri.param('tag') }} </a><i class="material-icons">chevron_right</i></i>
+	{% endif %}
+	</div>
+{% endif %}
